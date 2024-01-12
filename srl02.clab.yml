@@ -3,7 +3,7 @@ name: srl02
 
 topology:
   nodes:
-    srl1:
+    srl10:
       kind: srl
       image: ghcr.io/nokia/srlinux:23.10.1
       type: ixrd2l
@@ -19,4 +19,4 @@ topology:
        - "sysctl -w net.ipv6.conf.all.forwarding=1"
 
   links:
-    - endpoints: ["srl1:e1-1.0", "router1:eth1"]
+    - endpoints: ["srl10:e1-1.0", "router1:eth1"]
