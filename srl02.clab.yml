@@ -7,10 +7,14 @@ topology:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
       startup-config: srl1.cfg
-    srl2:
-      kind: nokia_srlinux
-      image: ghcr.io/nokia/srlinux
-      startup-config: srl2.cfg
+    router1:
+      kind: linux
+      image: quay.io/frrouting/frr:8.4.1
+      binds:
+        - router1/daemons:/etc/frr/daemons
+        - router1/frr.conf:/etc/frr/frr.conf
+      exec:
+       - "sysctl -w net.ipv6.conf.all.forwarding=1"
 
   links:
-    - endpoints: ["srl1:e1-1", "srl2:e1-1"]
+    - endpoints: ["srl1:e1-1", "router1:eth1"]
