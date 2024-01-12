@@ -4,6 +4,7 @@ name: srl02
 topology:
   nodes:
     srl1:
+      kind: srl
       image: ghcr.io/nokia/srlinux:23.10.1
       type: ixrd2l
       startup-config: srl1.cfg
