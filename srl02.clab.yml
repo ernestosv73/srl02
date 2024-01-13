@@ -10,7 +10,7 @@ topology:
   nodes:
     srl1:
       kind: srl
-      startup-config: configs/srl1.cfg
+      startup-config: srl1.cfg
       
     PC3:
       kind: linux
