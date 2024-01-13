@@ -2,7 +2,7 @@
 name: srl02
 
 topology:
- kinds: 
+  kinds: 
     srl:
       image: ghcr.io/nokia/srlinux:23.10.1
       type: ixrd2
@@ -19,4 +19,4 @@ topology:
       - ip -6 route del default dev eth0
 
   links:
-    - endpoints: ["srl1:e1-1.0", "PC3:eth1"]
+   - endpoints: ["srl1:e1-1.0", "PC3:eth1"]
