@@ -2,15 +2,21 @@
 name: srl02
 
 topology:
+ kinds: 
+    srl:
+      image: ghcr.io/nokia/srlinux:23.10.1
+      type: ixrd2
+
   nodes:
     srl1:
-      kind: nokia_srlinux
-      image: ghcr.io/nokia/srlinux
-      startup-config: srl1.cfg
-    srl2:
-      kind: nokia_srlinux
-      image: ghcr.io/nokia/srlinux
-      startup-config: srl2.cfg
+      kind: srl
+      startup-config: configs/srl1.cfg
+      
+    PC3:
+      kind: linux
+      image: praqma/network-multitool:extra
+      exec:
+      - ip -6 route del default dev eth0
 
   links:
-    - endpoints: ["srl1:e1-1", "srl2:e1-1"]
+    - endpoints: ["srl1:e1-1.0", "PC3:eth1"]
