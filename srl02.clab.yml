@@ -4,7 +4,6 @@ mgmt:
   network: netlan
   bridge: br-clab2
 
-
 topology:
   nodes:
     srl1:
@@ -15,6 +14,9 @@ topology:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux:23.10.1
       startup-config: srl2.cfg
+
+  br-clab2:
+      kind: bridge    
 
   links:
     - endpoints: ["br-clab2:eth1", "srl1:e1-1"]
