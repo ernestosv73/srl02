@@ -9,10 +9,12 @@ topology:
     srl1:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux:23.10.1
+      type: ixrd3
       startup-config: srl1.cfg
     srl2:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux:23.10.1
+      type: ixrd3
       startup-config: srl2.cfg
 
     br-clab2:
