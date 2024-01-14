@@ -15,7 +15,7 @@ topology:
       image: ghcr.io/nokia/srlinux:23.10.1
       startup-config: srl2.cfg
 
-  br-clab2:
+    br-clab2:
       kind: bridge    
 
   links:
