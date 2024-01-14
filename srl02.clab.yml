@@ -1,5 +1,9 @@
 # topology documentation: http://containerlab.dev/lab-examples/two-srls/
 name: srl02
+mgmt:
+  network: netlan
+  bridge: br-clab2
+
 
 topology:
   nodes:
@@ -13,4 +17,5 @@ topology:
       startup-config: srl2.cfg
 
   links:
-    - endpoints: ["srl1:e1-1", "srl2:e1-1"]
+    - endpoints: ["br-clab2:eth1", "srl1:e1-1"]
+    - endpoints: ["br-clab2:eth2", "srl2:e1-1"]
