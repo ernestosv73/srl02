@@ -1,0 +1,1 @@
+- Ejecutar la topología con el comando clab deploy -t srl02.clab.yml --network netlan
