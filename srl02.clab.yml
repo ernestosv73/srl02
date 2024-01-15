@@ -1,4 +1,4 @@
-# topology documentation: http://containerlab.dev/lab-examples/two-srls/
+
 name: srl02
 mgmt:
   network: netlan
